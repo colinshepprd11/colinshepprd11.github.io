@@ -9,6 +9,7 @@ export const SUBMIT_STUDY_SESSION_JESS = 'SUBMIT_STUDY_SESSION_JESS';
 
 export const SUBMIT_RESULTS = 'SUBMIT_RESULTS';
 export const BASE_AWS_URL = 'https://know-your-way.herokuapp.com';
+// export const BASE_AWS_URL = 'http://localhost';
 
 export function fetchData() {
     const data = async () => {
@@ -44,7 +45,7 @@ export function submitStudySession(studySessionResults) {
     const data = async () => {
         try {
             if (studySessionResults != null ) {
-                return await axios.post(`${BASE_AWS_URL}/api/studysession`, { "studySessionResults": studySessionResults })
+                return await axios.post(`${BASE_AWS_URL}/api/insert`, { "studySessionResults": studySessionResults })
             } else {
                 return { "studySessionResults": studySessionResults }
             }

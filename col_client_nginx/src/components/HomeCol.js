@@ -7,6 +7,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import "./styles.less";
 import Report from "./Report";
 import Timer from "./Timer";
+import Routine from "./Routine"
 import Computation from "./games/Computation";
 import Spatial from "./games/Spatial";
 import RandomWords from "./games/RandomWords";
@@ -83,7 +84,7 @@ class HomeCol extends React.Component {
         <Grid celled='internally' columns='equal' stackable>
           <Grid.Row textAlign='center'>
             <Grid.Column>
-              <Timer submitter={this.props.submitStudySession} />
+              <Routine submitter={this.props.submitStudySession} />
             </Grid.Column>
             <Grid.Column>
             {this.options[gameNumber]}
@@ -93,6 +94,9 @@ class HomeCol extends React.Component {
                   {!gameInProgress && <Button onClick={() => this.getGame(8, 4)}>Start Desk {deskGames}/2</Button>}
                 </Grid.Row>
               </Grid>
+            </Grid.Column>
+            <Grid.Column>
+              <Timer submitter={this.props.submitStudySession} />
             </Grid.Column>
           </Grid.Row>
         </Grid>
