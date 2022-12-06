@@ -31,7 +31,7 @@ export function fetchRandom() {
         try {
             return await axios.get(`${BASE_AWS_URL}/api/random`);
         } catch (err) {
-            console.log('ERROR From Actions Get Data');
+            console.log('ERROR From Actions Get Data.');
             return [];
         }
     }
