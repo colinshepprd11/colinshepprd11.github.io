@@ -56,7 +56,7 @@ class HomeCol extends React.Component {
       }
       const newGamesSeen = this.state.gamesSeen;
       newGamesSeen.push(number)
-      const isDeskGame = offset >= 8;
+      const isDeskGame = offset >= 6;
       const gameNumberRand = number;
       this.setState({
         gameInProgress: true,
