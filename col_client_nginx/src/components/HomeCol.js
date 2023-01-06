@@ -38,16 +38,12 @@ class HomeCol extends React.Component {
 
     <PlaceHolder stopGame={this.stopGame} name={'Flash Cards'} />,
     <PlaceHolder stopGame={this.stopGame} name={'Three Minute Epic'} />,
-    <PlaceHolder stopGame={this.stopGame} name={'Three Minute Epic'} />,
     <Computation stopGame={this.stopGame} />,
     <Computation stopGame={this.stopGame} />,
-    <Spatial stopGame={this.stopGame} />,
 
 
     <PlaceHolder stopGame={this.stopGame} name={'Five One Pagers'} />,
     <PlaceHolder stopGame={this.stopGame} name={'Ten One Liners'} />,
-    <PlaceHolder stopGame={this.stopGame} name={'Morning React'} />,
-    <PlaceHolder stopGame={this.stopGame} name={'Speed Typing'} />,
   ];
 
   getGame(offset, rand) {
@@ -90,8 +86,8 @@ class HomeCol extends React.Component {
             {this.options[gameNumber]}
               <Grid centered columns={1}>
                 <Grid.Row>
-                  {!gameInProgress && <Button onClick={() => this.getGame(2, 6)}>Start Phone {phoneGames}/2</Button>}
-                  {!gameInProgress && <Button onClick={() => this.getGame(8, 4)}>Start Desk {deskGames}/2</Button>}
+                  {!gameInProgress && <Button onClick={() => this.getGame(2, 4)}>Start Phone {phoneGames}/2</Button>}
+                  {!gameInProgress && <Button onClick={() => this.getGame(6, 2)}>Start Desk {deskGames}/2</Button>}
                 </Grid.Row>
               </Grid>
             </Grid.Column>
