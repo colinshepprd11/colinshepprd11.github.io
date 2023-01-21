@@ -37,8 +37,6 @@ class HomeCol extends React.Component {
     <div>done</div>,
 
     <PlaceHolder stopGame={this.stopGame} name={'Flash Cards'} />,
-    <PlaceHolder stopGame={this.stopGame} name={'Three Minute Epic'} />,
-    <Computation stopGame={this.stopGame} />,
     <Computation stopGame={this.stopGame} />,
 
 
@@ -50,19 +48,23 @@ class HomeCol extends React.Component {
     const { roundsPlayed, phoneGames, deskGames } = this.state;
     console.log(`roundsPlayed${roundsPlayed} , phoneGames:${phoneGames}, deskGames:${deskGames}`)
     if (roundsPlayed < 4) {
-      let number = -1;
-      while (number == -1 || this.state.gamesSeen.includes(number)) {
-        number = Math.floor(Math.random() * Math.floor(rand)) + offset;
-      }
-      const newGamesSeen = this.state.gamesSeen;
-      newGamesSeen.push(number)
-      const isDeskGame = offset >= 6;
+      // Removing random for now
+      // let number = -1;
+      // while (number == -1 || this.state.gamesSeen.includes(number)) {
+      //   number = Math.floor(Math.random() * Math.floor(rand)) + offset;
+      // }
+
+      // const newGamesSeen = this.state.gamesSeen;
+      // newGamesSeen.push(number)
+
+      let number = (roundsPlayed % 2) + offset;
+
+      const isDeskGame = offset >= 4;
       const gameNumberRand = number;
       this.setState({
         gameInProgress: true,
         roundsPlayed: this.state.roundsPlayed + 1,
         gameNumber: gameNumberRand,
-        gamesSeen: newGamesSeen,
         phoneGames: phoneGames + (!isDeskGame ? 1 : 0),
         deskGames: deskGames + (isDeskGame ? 1 : 0)
       })
@@ -86,8 +88,8 @@ class HomeCol extends React.Component {
             {this.options[gameNumber]}
               <Grid centered columns={1}>
                 <Grid.Row>
-                  {!gameInProgress && <Button onClick={() => this.getGame(2, 4)}>Start Phone {phoneGames}/2</Button>}
-                  {!gameInProgress && <Button onClick={() => this.getGame(6, 2)}>Start Desk {deskGames}/2</Button>}
+                  {!gameInProgress && <Button onClick={() => this.getGame(2, 0)}>Start Phone {phoneGames}/2</Button>}
+                  {!gameInProgress && <Button onClick={() => this.getGame(4, 0)}>Start Desk {deskGames}/2</Button>}
                 </Grid.Row>
               </Grid>
             </Grid.Column>
