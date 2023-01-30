@@ -36,18 +36,17 @@ class HomeCol extends React.Component {
     <div></div>,
     <div>done</div>,
 
-    <PlaceHolder stopGame={this.stopGame} name={'Flash Cards'} />,
+    <PlaceHolder stopGame={this.stopGame} name={'Morning Pages'} />,
     <Computation stopGame={this.stopGame} />,
 
 
     <PlaceHolder stopGame={this.stopGame} name={'Five One Pagers'} />,
-    <PlaceHolder stopGame={this.stopGame} name={'Ten One Liners'} />,
   ];
 
   getGame(offset, rand) {
     const { roundsPlayed, phoneGames, deskGames } = this.state;
     console.log(`roundsPlayed${roundsPlayed} , phoneGames:${phoneGames}, deskGames:${deskGames}`)
-    if (roundsPlayed < 4) {
+    if (roundsPlayed < 3) {
       // Removing random for now
       // let number = -1;
       // while (number == -1 || this.state.gamesSeen.includes(number)) {
