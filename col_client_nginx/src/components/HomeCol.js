@@ -46,7 +46,7 @@ class HomeCol extends React.Component {
   getGame(offset, rand) {
     const { roundsPlayed, phoneGames, deskGames } = this.state;
     console.log(`roundsPlayed${roundsPlayed} , phoneGames:${phoneGames}, deskGames:${deskGames}`)
-    if (roundsPlayed < 3) {
+    if (roundsPlayed < 2) {
       // Removing random for now
       // let number = -1;
       // while (number == -1 || this.state.gamesSeen.includes(number)) {
