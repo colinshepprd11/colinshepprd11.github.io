@@ -29,48 +29,36 @@ class HomeCol extends React.Component {
   }
 
   stopGame = () => {
-    this.setState({ gameInProgress: false, gameNumber: 0 })
+    const { roundsPlayed } = this.state;
+    if (roundsPlayed >= 3) {
+      this.props.submitResults({ rounds: 5, minutes: 5 })
+      this.setState({ gameInProgress: true, gameNumber: 1 })
+    } else {
+      this.setState({ gameInProgress: false, gameNumber: 0 })
+    }
   }
 
   options = [
     <div></div>,
     <div>done</div>,
-
-    <PlaceHolder stopGame={this.stopGame} name={'Morning Pages'} />,
     <Computation stopGame={this.stopGame} />,
-
-
+    <PlaceHolder stopGame={this.stopGame} name={'10 Jokes'} />,
     <PlaceHolder stopGame={this.stopGame} name={'Five One Pagers'} />,
   ];
 
-  getGame(offset, rand) {
-    const { roundsPlayed, phoneGames, deskGames } = this.state;
-    console.log(`roundsPlayed${roundsPlayed} , phoneGames:${phoneGames}, deskGames:${deskGames}`)
-    if (roundsPlayed < 2) {
-      // Removing random for now
-      // let number = -1;
-      // while (number == -1 || this.state.gamesSeen.includes(number)) {
-      //   number = Math.floor(Math.random() * Math.floor(rand)) + offset;
-      // }
+  getGame(offset) {
+    const { phoneGames, deskGames } = this.state;
+    const isDeskGame = offset >= 3;
+    let number = (isDeskGame ? deskGames : phoneGames) + offset;
+    const gameNumberRand = number;
+    this.setState({
+      gameInProgress: true,
+      roundsPlayed: this.state.roundsPlayed + 1,
+      gameNumber: gameNumberRand,
+      phoneGames: phoneGames + (!isDeskGame ? 1 : 0),
+      deskGames: deskGames + (isDeskGame ? 1 : 0)
+    })
 
-      // const newGamesSeen = this.state.gamesSeen;
-      // newGamesSeen.push(number)
-
-      let number = (roundsPlayed % 2) + offset;
-
-      const isDeskGame = offset >= 4;
-      const gameNumberRand = number;
-      this.setState({
-        gameInProgress: true,
-        roundsPlayed: this.state.roundsPlayed + 1,
-        gameNumber: gameNumberRand,
-        phoneGames: phoneGames + (!isDeskGame ? 1 : 0),
-        deskGames: deskGames + (isDeskGame ? 1 : 0)
-      })
-    } else {
-      this.props.submitResults({ rounds: 5, minutes: 5 })
-      this.setState({ gameInProgress: true, gameNumber: 1 })
-    }
   }
 
   render() {
@@ -84,11 +72,11 @@ class HomeCol extends React.Component {
               <Routine submitter={this.props.submitStudySession} />
             </Grid.Column>
             <Grid.Column>
-            {this.options[gameNumber]}
+              {this.options[gameNumber]}
               <Grid centered columns={1}>
                 <Grid.Row>
-                  {!gameInProgress && <Button onClick={() => this.getGame(2, 0)}>Start Phone {phoneGames}/2</Button>}
-                  {!gameInProgress && <Button onClick={() => this.getGame(4, 0)}>Start Desk {deskGames}/2</Button>}
+                  {!gameInProgress && <Button onClick={() => this.getGame(2)}>Start Phone {phoneGames}/1</Button>}
+                  {!gameInProgress && <Button onClick={() => this.getGame(3)}>Start Desk {deskGames}/2</Button>}
                 </Grid.Row>
               </Grid>
             </Grid.Column>
