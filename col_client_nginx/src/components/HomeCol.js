@@ -30,7 +30,7 @@ class HomeCol extends React.Component {
 
   stopGame = () => {
     const { roundsPlayed } = this.state;
-    if (roundsPlayed >= 3) {
+    if (roundsPlayed >= 4) {
       this.props.submitResults({ rounds: 5, minutes: 5 })
       this.setState({ gameInProgress: true, gameNumber: 1 })
     } else {
@@ -42,19 +42,19 @@ class HomeCol extends React.Component {
     <div></div>,
     <div>done</div>,
     <Computation stopGame={this.stopGame} />,
+    <PlaceHolder stopGame={this.stopGame} name={'3 2 minute epics'} />,
     <PlaceHolder stopGame={this.stopGame} name={'10 Jokes'} />,
     <PlaceHolder stopGame={this.stopGame} name={'Five One Pagers'} />,
   ];
 
   getGame(offset) {
     const { phoneGames, deskGames } = this.state;
-    const isDeskGame = offset >= 3;
+    const isDeskGame = offset >= 4;
     let number = (isDeskGame ? deskGames : phoneGames) + offset;
-    const gameNumberRand = number;
     this.setState({
       gameInProgress: true,
       roundsPlayed: this.state.roundsPlayed + 1,
-      gameNumber: gameNumberRand,
+      gameNumber: number,
       phoneGames: phoneGames + (!isDeskGame ? 1 : 0),
       deskGames: deskGames + (isDeskGame ? 1 : 0)
     })
@@ -75,8 +75,8 @@ class HomeCol extends React.Component {
               {this.options[gameNumber]}
               <Grid centered columns={1}>
                 <Grid.Row>
-                  {!gameInProgress && <Button onClick={() => this.getGame(2)}>Start Phone {phoneGames}/1</Button>}
-                  {!gameInProgress && <Button onClick={() => this.getGame(3)}>Start Desk {deskGames}/2</Button>}
+                  {!gameInProgress && <Button onClick={() => this.getGame(2)}>Start Phone {phoneGames}/2</Button>}
+                  {!gameInProgress && <Button onClick={() => this.getGame(4)}>Start Desk {deskGames}/2</Button>}
                 </Grid.Row>
               </Grid>
             </Grid.Column>
