@@ -43,7 +43,7 @@ class HomeCol extends React.Component {
     <div>done</div>,
     <Computation stopGame={this.stopGame} />,
     <PlaceHolder stopGame={this.stopGame} name={'3 2 minute epics'} />,
-    <PlaceHolder stopGame={this.stopGame} name={'5 times set'} />,
+    <PlaceHolder stopGame={this.stopGame} name={'Journal'} />,
     <PlaceHolder stopGame={this.stopGame} name={'Five One Pagers'} />,
   ];
 
