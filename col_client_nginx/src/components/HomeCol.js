@@ -24,14 +24,17 @@ class HomeCol extends React.Component {
       currentGame: 0,
       phoneGames: 0,
       deskGames: 0,
+      startTime: undefined
     };
     this.props.fetchData()
   }
 
   stopGame = () => {
-    const { roundsPlayed } = this.state;
+    const { roundsPlayed, startTime } = this.state;
     if (roundsPlayed >= 4) {
-      this.props.submitResults({ rounds: 5, minutes: 5 })
+      const duration = Math.round((Date.now() - startTime) / 1000 / 60);
+      console.log(duration)
+      this.props.submitResults({ rounds: 5, minutes: duration })
       this.setState({ gameInProgress: true, gameNumber: 1 })
     } else {
       this.setState({ gameInProgress: false, gameNumber: 0 })
@@ -48,10 +51,12 @@ class HomeCol extends React.Component {
   ];
 
   getGame(offset) {
-    const { phoneGames, deskGames } = this.state;
+    const { phoneGames, deskGames, startTime } = this.state;
     const isDeskGame = offset >= 4;
     let number = (isDeskGame ? deskGames : phoneGames) + offset;
+
     this.setState({
+      startTime: startTime ? startTime : Date.now(),
       gameInProgress: true,
       roundsPlayed: this.state.roundsPlayed + 1,
       gameNumber: number,
