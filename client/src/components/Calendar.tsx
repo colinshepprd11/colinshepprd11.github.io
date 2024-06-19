@@ -1,5 +1,5 @@
 import axios from "axios";
-import moment from "moment";
+import moment from "moment-timezone";
 import { useEffect, useState } from "react";
 import { Calendar as BigCalendar, momentLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
@@ -20,10 +20,13 @@ const Calendar = () => {
     if (!results) return [];
     return results.map((r) => {
       const { time, study_session_results } = r;
+      // TODO: this is a dumb hack to get date. 
+      // Need to use EPOC instead on back end
+      const t = moment(time).add(1, 'day').toISOString();
       return {
         title: study_session_results,
-        start: time,
-        end: time,
+        start: t,
+        end: t,
       };
     });
   };
