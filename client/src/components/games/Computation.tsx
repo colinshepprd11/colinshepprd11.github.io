@@ -70,10 +70,11 @@ const InactiveStart = ({ gameInfo, setGameInfo }: any) => {
 };
 
 const ActiveStart = ({ gameInfo, setGameInfo }: any) => {
-  const { operators, numbers } = gameInfo;
+  const { operators, numbers, score: { seen } } = gameInfo;
   return (
     <StageContainer>
       <div>
+        {`${seen + 1})`}
         {numbers.map((n: any, i: any) => {
           return (
             <span key={i}>
@@ -160,7 +161,6 @@ const InactiveEnd = ({ gameInfo, setGameInfo }: any) => {
     );
     setDuration(minutes);
     axios.post(`${BASE_AWS_URL}/api/insert`, {
-      computationResults: correct,
       randomResults: minutes,
     });
   }, []);
