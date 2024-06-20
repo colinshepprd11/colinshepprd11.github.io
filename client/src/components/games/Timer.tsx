@@ -1,15 +1,15 @@
 import { useTimer } from "react-timer-hook";
 
-const Timer = ({length, playAudio}: any) => {
+const Timer = ({length, onExpire}: any) => {
   let expiryTimestamp = new Date();
-  expiryTimestamp.setSeconds(expiryTimestamp.getSeconds() + length); // 10 minutes timer
+  expiryTimestamp.setSeconds(expiryTimestamp.getSeconds() + length);
 
   const {
     seconds,
     minutes,
   } = useTimer({
     expiryTimestamp,
-    onExpire: playAudio,
+    onExpire,
   });
 
   return (

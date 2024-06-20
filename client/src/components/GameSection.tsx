@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Computation from "./games/Computation";
 import Improv from "./games/Improv";
 import { GameItemContainer } from "./style";
+import FlashCard from "./games/FlashCard";
 
 const GameSection = () => {
   return (
@@ -11,6 +12,9 @@ const GameSection = () => {
       </GameItemContainer>
       <GameItemContainer>
         <Improv />
+      </GameItemContainer>
+      <GameItemContainer>
+        <FlashCard />
       </GameItemContainer>
     </GameContainer>
   );
