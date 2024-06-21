@@ -27,7 +27,7 @@ const Improv = () => {
         <StageContainer>
           <StageContainer> {word} </StageContainer>
           <Timer
-            length={2}
+            length={120}
             onExpire={() => {
               playAudio();
               endImprov();

@@ -141,10 +141,8 @@ const ActiveEnd = ({ gameInfo, setGameInfo }: any) => {
   return (
     <StageContainer>
       <div>{getDisplay()}</div>
-      <div>
         <Button onClick={() => handleClick(0)}>Correct</Button>
         <Button onClick={() => handleClick(1)}>InCorrect</Button>
-      </div>
     </StageContainer>
   );
 };
