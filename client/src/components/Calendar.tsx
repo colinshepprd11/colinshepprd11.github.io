@@ -3,7 +3,7 @@ import moment from "moment-timezone";
 import { useEffect, useState } from "react";
 import { Calendar as BigCalendar, momentLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-export const BASE_AWS_URL = "https://know-your-way.herokuapp.com";
+export const BASE_AWS_URL = "https://open.bluebirdjournal.app/public/computation";
 
 type CalendarEvent = {
   title: string;
@@ -33,11 +33,11 @@ const Calendar = () => {
 
   const fetchData = async () => {
     try {
-      const results = await axios.get(`${BASE_AWS_URL}/api/data`);
+      const results = await axios.get(`${BASE_AWS_URL}/data`);
       const events = mapResultsToEvents(results.data);
       setEvents(events);
     } catch (error) {
-      console.log("error fetching /api/data");
+      console.log("error fetching /data");
       return [];
     }
   };
