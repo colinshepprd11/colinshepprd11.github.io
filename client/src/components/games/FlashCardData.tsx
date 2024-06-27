@@ -1,7 +1,7 @@
 // Create 5 extremely challenging flashcards with useful information on a specific topic or specific technology within software infrastructure.
 // make the back of card very detailed but concise and explained clearly for a senior level technical person.
-// I am using the response programmatically so I need the flashcards to be in exactly this format with no additional text in the response. Do not include any special characters, numbers, or bullet points or spacing:
-// {topic: "topic",cards:[{front: "front of card 1", back: "back of card 1 having no special characters, numbers or bullet points"},]}
+// I am using the response programmatically so I need the flashcards to be in exactly this format with no additional text in the response. Do not include any numbered lists, or bullet points or special spacing:
+// {topic: "topic",cards:[{front: "front of card 1", back: "back of card 1 having no numbered lists, or bullet points or special spacing"},]}
 
 const FlashCardData = [
   {
@@ -107,3 +107,32 @@ const FlashCardData = [
 ];
 
 export default FlashCardData;
+
+
+
+
+export const newTopic = {
+  topic: "New Topic",
+  cards: [
+    {
+      front: "Explain the concept of feature engineering",
+      back: "Feature engineering is the process of using domain knowledge to extract features from raw data to improve the performance of machine learning models It includes creating new features selecting relevant features and transforming existing features This step is crucial for capturing the underlying patterns in data and significantly impacts model accuracy and efficiency",
+    },
+    {
+      front: "Define model versioning and its importance",
+      back: "Model versioning involves keeping track of different versions of machine learning models It is essential for ensuring reproducibility consistency and traceability in workflows By maintaining a systematic record of model changes and their respective performance metrics teams can easily rollback to previous versions compare models and manage deployments effectively",
+    },
+    {
+      front: "What are the challenges of distributed training",
+      back: "Distributed training involves training machine learning models across multiple machines or devices to handle large datasets and complex models Challenges include managing communication overhead ensuring model parameter synchronization dealing with hardware heterogeneity and efficiently partitioning the data to avoid bottlenecks Solutions often involve using frameworks like TensorFlow or PyTorch that provide built-in support for distributed computing",
+    },
+    {
+      front: "Role of orchestration tools in ML workflows",
+      back: "Orchestration tools like Kubeflow and Airflow automate and manage end-to-end machine learning workflows They handle various stages such as data pre-processing model training hyperparameter tuning and deployment These tools improve reproducibility scalability and collaboration by providing standardized pipelines and integration with other tools in the machine learning ecosystem",
+    },
+    {
+      front: "Importance of data provenance in ML",
+      back: "Data provenance refers to tracking the origin and transformations of data throughout its lifecycle in a machine learning project It ensures data integrity and transparency by providing a comprehensive audit trail Data provenance is critical for reproducibility debugging and regulatory compliance in ML applications enabling teams to trace results back to their data sources and transformations",
+    },
+  ],
+}

@@ -16,15 +16,13 @@ const localizer = momentLocalizer(moment);
 const Calendar = () => {
   const [events, setEvents] = useState<CalendarEvent[]>([]);
 
-  const mapResultsToEvents = (results: any[]) => {
+  const mapResultsToEvents = (results: any[]): CalendarEvent[] => {
     if (!results) return [];
     return results.map((r) => {
-      const { time, study_session_results } = r;
-      // TODO: this is a dumb hack to get date. 
-      // Need to use EPOC instead on back end
-      const t = moment(time).add(1, 'day').toISOString();
+      const { timestamp, count } = r;
+      const t = moment(Number(timestamp)).toString();
       return {
-        title: study_session_results,
+        title: count,
         start: t,
         end: t,
       };
@@ -33,7 +31,7 @@ const Calendar = () => {
 
   const fetchData = async () => {
     try {
-      const results = await axios.get(`${BASE_AWS_URL}/data`);
+      const results = await axios.post(`${BASE_AWS_URL}/data`);
       const events = mapResultsToEvents(results.data);
       setEvents(events);
     } catch (error) {
@@ -44,7 +42,7 @@ const Calendar = () => {
 
   useEffect(() => {
     fetchData();
-  });
+  },[]);
 
   return (
     <BigCalendar
@@ -53,6 +51,7 @@ const Calendar = () => {
       startAccessor="start"
       endAccessor="end"
       style={{ height: "60vh" }}
+      onSelectEvent={() => {}}
     />
   );
 };

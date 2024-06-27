@@ -6,8 +6,10 @@ import {
   FlashCardOptionContainer,
   FlashDisplayContainer,
 } from "../style";
-import FlashCardData from "./FlashCardData";
+import FlashCardData, { newTopic } from "./FlashCardData";
 import styled from "styled-components";
+import axios from "axios";
+import { BASE_AWS_URL } from "../Calendar";
 
 const CardDisplay = ({ cards, topic }: any) => {
   const [currentCard, setCurrentCard] = useState(0);
@@ -38,12 +40,30 @@ const CardDisplay = ({ cards, topic }: any) => {
 
 const FlashCard = () => {
   const [activeTopic, setActiveTopic] = useState<any>({ topic: "", cards: [] });
+  const [topicInput, setTopicInput] = useState("")
+  const [flashCards, setFlashCards] = useState<any>(FlashCardData)
+
+  const handleTopicSubmit = () => {
+    try {
+      axios.post(`${BASE_AWS_URL}/api/insert`, {
+        topic:topicInput
+      });
+  
+      setFlashCards([...flashCards, newTopic])
+    } catch (error) {
+      
+    }
+
+  }
+
   const { topic, cards } = activeTopic;
   return (
     <FlashCardContainer>
+      <input type="text" value={topicInput} onChange={(e) => setTopicInput(e.target.value)}/>
+      <Button onClick={handleTopicSubmit}>Generate Topic</Button>
       {cards.length > 0 && <CardDisplay key={topic} cards={cards} />}
       <FlashCardOptionContainer>
-        {FlashCardData.map((data) => {
+        {flashCards.map((data: any) => {
           const { topic, cards } = data;
           return (
             <Button
