@@ -5,6 +5,7 @@ import {
   FlashCardItemContainer,
   FlashCardOptionContainer,
   FlashDisplayContainer,
+  StyledSpinner,
 } from "../style";
 import FlashCardData, { newTopic } from "./FlashCardData";
 import styled from "styled-components";
@@ -40,27 +41,36 @@ const CardDisplay = ({ cards, topic }: any) => {
 
 const FlashCard = () => {
   const [activeTopic, setActiveTopic] = useState<any>({ topic: "", cards: [] });
-  const [topicInput, setTopicInput] = useState("")
-  const [flashCards, setFlashCards] = useState<any>(FlashCardData)
+  const [topicInput, setTopicInput] = useState("");
+  const [flashCards, setFlashCards] = useState<any>(FlashCardData);
+  const [loading, setLoading] = useState(false);
 
-  const handleTopicSubmit = () => {
+  const handleTopicSubmit = async () => {
     try {
-      axios.post(`${BASE_AWS_URL}/api/insert`, {
-        topic:topicInput
+      setLoading((l) => true);
+      const response = await axios.post(`${BASE_AWS_URL}/topic`, {
+        topic: topicInput,
       });
-  
-      setFlashCards([...flashCards, newTopic])
+      const { topic, cards } = response.data;
+      setFlashCards([...flashCards, { topic, cards }]);
     } catch (error) {
-      
+      console.log(`Error generating flashcards ${error}`);
+    } finally {
+      setLoading((l) => false);
     }
-
-  }
+  };
 
   const { topic, cards } = activeTopic;
   return (
     <FlashCardContainer>
-      <input type="text" value={topicInput} onChange={(e) => setTopicInput(e.target.value)}/>
-      <Button onClick={handleTopicSubmit}>Generate Topic</Button>
+      <input
+        type="text"
+        value={topicInput}
+        onChange={(e) => setTopicInput(e.target.value)}
+      />
+      <Button onClick={handleTopicSubmit}>
+        {loading ? <StyledSpinner /> : `Generate Topic`}
+      </Button>
       {cards.length > 0 && <CardDisplay key={topic} cards={cards} />}
       <FlashCardOptionContainer>
         {flashCards.map((data: any) => {

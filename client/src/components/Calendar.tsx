@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Calendar as BigCalendar, momentLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 export const BASE_AWS_URL = "https://open.bluebirdjournal.app/public/computation";
-
+// export const BASE_AWS_URL = "http://localhost:3001/public/computation"
 type CalendarEvent = {
   title: string;
   start: string;

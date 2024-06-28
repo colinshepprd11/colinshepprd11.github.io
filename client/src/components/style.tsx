@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const StageContainer = styled.div`
   display: flex;
@@ -88,4 +88,24 @@ export const Button = styled.span<{
     background-color: grey;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
   }
+`;
+
+
+const rotate = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
+
+export const StyledSpinner = styled.div<{ size?: string }>`
+  display: inline-block;
+  width: ${(props) => (props.size ? props.size : ".7")}em;
+  height: ${(props) => (props.size ? props.size : ".7")}em;
+  border-radius: 60%;
+  border: 3px solid rgba(0, 0, 0, 0);
+  border-top-color: black;
+  animation: ${rotate} 0.7s linear infinite;
 `;

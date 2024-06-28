@@ -1,4 +1,4 @@
-import moment from "moment";
+import moment, { duration } from "moment";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_AWS_URL } from "../Calendar";
@@ -107,13 +107,26 @@ const ActiveStart = ({ gameInfo, setGameInfo }: any) => {
 const ActiveEnd = ({ gameInfo, setGameInfo }: any) => {
   const handleClick = (correct: number) => {
     const { numbers, operators } = generateOperations();
+    const compComplete = gameInfo.score.seen >= 4
+    let duration = null;
+
+    if(compComplete){
+      const endTime = moment();
+      duration = Math.ceil(
+        moment.duration(endTime.diff(gameInfo.startTime)).asMinutes()
+      );
+      axios.post(`${BASE_AWS_URL}/insert`, {
+        elapsedTime: duration,
+      });
+    }
+
     setGameInfo({
       ...gameInfo,
       score: {
         correct: gameInfo.score.correct + correct,
         seen: gameInfo.score.seen + 1,
       },
-      currentStateKey: gameInfo.score.seen < 4 ? "ActiveStart" : "InactiveEnd",
+      currentStateKey: compComplete ? "InactiveEnd" : "ActiveStart",
       numbers,
       operators,
     });
@@ -147,21 +160,9 @@ const ActiveEnd = ({ gameInfo, setGameInfo }: any) => {
   );
 };
 
-const InactiveEnd = ({ gameInfo, setGameInfo }: any) => {
+const InactiveEnd = ({ gameInfo }: any) => {
   const { correct, seen } = gameInfo.score;
-  const { startTime } = gameInfo;
-  const [duration, setDuration] = useState<any>(null);
-
-  useEffect(() => {
-    const endTime = moment();
-    const minutes = Math.ceil(
-      moment.duration(endTime.diff(startTime)).asMinutes()
-    );
-    setDuration(minutes);
-    axios.post(`${BASE_AWS_URL}/api/insert`, {
-      randomResults: minutes,
-    });
-  }, []);
+  const { duration } = gameInfo;
 
   return <div>{`${correct} / ${seen} in ${duration}`}</div>;
 };
@@ -176,6 +177,7 @@ const gameStates: any = {
 const Computation = () => {
   const [gameInfo, setGameInfo] = useState({
     startTime: null,
+    duration: null,
     score: { correct: 0, seen: 0 },
     numbers: [],
     operators: [],
