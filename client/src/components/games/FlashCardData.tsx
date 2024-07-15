@@ -139,67 +139,67 @@ const FlashCardData = [
     "cards": [
       {
         "front": "How do you push an element to the end of a vector in C++?",
-        "back": "To push an element to the end of a vector, use the push_back() method. Example: vector<int> vec; vec.push_back(1); // Adds 1 to the end of the vector."
+        "back": "vec.push_back(1);"
       },
       {
         "front": "How do you insert an element at a specific position in a vector in C++?",
-        "back": "To insert an element at a specific position in a vector, use the insert() method. Example: vector<int> vec = {1, 2, 3}; vec.insert(vec.begin() + 1, 4); // Inserts 4 at the second position."
+        "back": "vec.insert(vec.begin() + 1, 4);"
       },
       {
         "front": "How do you remove the last element from a vector in C++?",
-        "back": "To remove the last element from a vector, use the pop_back() method. Example: vector<int> vec = {1, 2, 3}; vec.pop_back(); // Removes the last element (3)."
+        "back": "vec.pop_back();"
       },
       {
-        "front": "How do you access an element in a vector using bounds-checked access in C++?",
-        "back": "To access an element in a vector using bounds-checked access, use the at() method. Example: vector<int> vec = {1, 2, 3}; int second = vec.at(1); // Accesses the second element (2) with bounds checking."
+        "front": "How do you access an element in a vector with bounds checking?",
+        "back": "vec.at(1);"
       },
       {
         "front": "How do you add an element to a map in C++?",
-        "back": "To add an element to a map, you can use the insert() method or the array-like access operator. Example: map<string, int> map_example; map_example['apple'] = 3; // Adds or updates the value for 'apple' to 3. map_example.insert({'banana', 2}); // Inserts 'banana' with value 2 only if it doesn't exist."
+        "back": "map_example[\"key\"] = value;"
       },
       {
         "front": "How do you remove an element from a map in C++?",
-        "back": "To remove an element from a map, use the erase() method. Example: map<string, int> map_example; map_example.erase('banana'); // Removes the element with the key 'banana'."
+        "back": "map_example.erase(\"key\");"
       },
       {
         "front": "How do you check if a key exists in a map in C++?",
-        "back": "To check if a key exists in a map, use the find() method. Example: map<string, int> map_example = { {'apple', 3} }; bool exists = map_example.find('apple') != map_example.end(); // Returns true if 'apple' exists in the map."
+        "back": "map_example.find(\"key\") != map_example.end();"
       },
       {
         "front": "How do you add an element to a set in C++?",
-        "back": "To add an element to a set, use the insert() method. Example: set<int> set_example; set_example.insert(1); // Adds 1 to the set. Duplicate elements are ignored."
+        "back": "set_example.insert(1);"
       },
       {
         "front": "How do you remove an element from a set in C++?",
-        "back": "To remove an element from a set, use the erase() method. Example: set<int> set_example = {1, 2, 3}; set_example.erase(2); // Removes the element 2 from the set."
+        "back": "set_example.erase(1);"
       },
       {
         "front": "How do you push an element to a stack in C++?",
-        "back": "To push an element to a stack, use the push() method. Example: stack<int> stack_example; stack_example.push(10); // Pushes 10 onto the stack."
+        "back": "stack_example.push(10);"
       },
       {
         "front": "How do you pop an element from a stack in C++?",
-        "back": "To pop an element from a stack, use the pop() method. Example: stack<int> stack_example; stack_example.pop(); // Pops the top element from the stack."
+        "back": "stack_example.pop();"
       },
       {
         "front": "How do you enqueue an element in a queue in C++?",
-        "back": "To enqueue an element in a queue, use the push() method. Example: queue<int> queue_example; queue_example.push(10); // Enqueues 10 into the queue."
+        "back": "queue_example.push(10);"
       },
       {
         "front": "How do you dequeue an element from a queue in C++?",
-        "back": "To dequeue an element from a queue, use the pop() method. Example: queue<int> queue_example; queue_example.pop(); // Dequeues the front element from the queue."
+        "back": "queue_example.pop();"
       },
       {
         "front": "How do you sort a vector in C++?",
-        "back": "To sort a vector, use the sort() function from the algorithm header. Example: vector<int> vec = {3, 1, 4, 1, 5, 9}; sort(vec.begin(), vec.end()); // Sorts the vector in ascending order."
+        "back": "sort(vec.begin(), vec.end());"
       },
       {
-        "front": "How do you find the minimum and maximum elements in a vector in C++?",
-        "back": "To find the minimum element, use min_element() from the algorithm header. To find the maximum element, use max_element(). Example: vector<int> vec = {3, 1, 4, 1, 5, 9}; int min_val = *min_element(vec.begin(), vec.end()); int max_val = *max_element(vec.begin(), vec.end());"
+        "front": "How do you find the min and max elements in a vector in C++?",
+        "back": "min_element(vec.begin(), vec.end()); max_element(vec.begin(), vec.end());"
       },
       {
         "front": "How do you calculate the sum of elements in a vector in C++?",
-        "back": "To calculate the sum of elements in a vector, use the accumulate() function from the numeric header. Example: vector<int> vec = {1, 2, 3}; int sum = accumulate(vec.begin(), vec.end(), 0); // Calculates the sum of elements (6)."
+        "back": "accumulate(vec.begin(), vec.end(), 0);"
       }
     ]
   },
@@ -207,68 +207,68 @@ const FlashCardData = [
     "topic": "Python Coding Usage",
     "cards": [
       {
-        "front": "How do you append an element to the end of a list in Python?",
-        "back": "To append an element to the end of a list, use the append() method. Example: lst = [1, 2, 3]; lst.append(4); # Adds 4 to the end of the list."
+        "front": "How do you append an element to a list in Python?",
+        "back": "lst.append(4);"
       },
       {
         "front": "How do you insert an element at a specific position in a list in Python?",
-        "back": "To insert an element at a specific position in a list, use the insert() method. Example: lst = [1, 2, 3]; lst.insert(1, 4); # Inserts 4 at the second position."
+        "back": "lst.insert(1, 4);"
       },
       {
         "front": "How do you remove the last element from a list in Python?",
-        "back": "To remove the last element from a list, use the pop() method. Example: lst = [1, 2, 3]; lst.pop(); # Removes the last element (3)."
+        "back": "lst.pop();"
       },
       {
         "front": "How do you remove an element at a specific position in a list in Python?",
-        "back": "To remove an element at a specific position in a list, use the pop() method with an index. Example: lst = [1, 2, 3]; lst.pop(1); # Removes the element at index 1 (2)."
+        "back": "lst.pop(1);"
       },
       {
         "front": "How do you add a key-value pair to a dictionary in Python?",
-        "back": "To add a key-value pair to a dictionary, use the bracket notation or the update() method. Example: dct = {}; dct['apple'] = 3; # Adds key 'apple' with value 3. or dct.update({'banana': 2}); # Adds key 'banana' with value 2."
+        "back": "dct['apple'] = 3;"
       },
       {
         "front": "How do you remove a key-value pair from a dictionary in Python?",
-        "back": "To remove a key-value pair from a dictionary, use the pop() method or the del statement. Example: dct = {'apple': 3, 'banana': 2}; dct.pop('banana'); # Removes the key 'banana'. or del dct['banana']; # Alternatively, removes the key 'banana'."
+        "back": "dct.pop('banana');"
       },
       {
         "front": "How do you check if a key exists in a dictionary in Python?",
-        "back": "To check if a key exists in a dictionary, use the in keyword. Example: dct = {'apple': 3}; exists = 'apple' in dct; # Returns true if 'apple' exists in the dictionary."
+        "back": "'apple' in dct;"
       },
       {
         "front": "How do you add an element to a set in Python?",
-        "back": "To add an element to a set, use the add() method. Example: s = set(); s.add(1); # Adds 1 to the set. Duplicate elements are ignored."
+        "back": "s.add(1);"
       },
       {
         "front": "How do you remove an element from a set in Python?",
-        "back": "To remove an element from a set, use the remove() or discard() method. Example: s = {1, 2, 3}; s.remove(2); # Removes the element 2 from the set. or s.discard(2); # Alternatively, removes the element 2 from the set; does not raise an error if the element is not present."
+        "back": "s.remove(2);"
       },
       {
-        "front": "How do you push an element to the top of a stack in Python?",
-        "back": "In Python, lists can be used as stacks. To push an element to the top of a stack, use the append() method. Example: stack = []; stack.append(10); # Pushes 10 onto the stack."
+        "front": "How do you push an element to a stack in Python?",
+        "back": "stack.append(10);"
       },
       {
         "front": "How do you pop an element from a stack in Python?",
-        "back": "In Python, lists can be used as stacks. To pop an element from the top of a stack, use the pop() method. Example: stack = [10]; stack.pop(); # Pops the top element (10) from the stack."
+        "back": "stack.pop();"
       },
       {
         "front": "How do you enqueue an element in a queue in Python?",
-        "back": "In Python, lists can be used as queues by using the append() method. Example: queue = []; queue.append(10); # Enqueues 10 into the queue."
+        "back": "queue.append(10);"
       },
       {
         "front": "How do you dequeue an element from a queue in Python?",
-        "back": "In Python, you can dequeue an element from the front of the queue using the pop(0) method for lists, but it is inefficient. It is recommended to use collections.deque for efficient O(1) dequeue operations. Example: from collections import deque; queue = deque([10, 20, 30]); queue.popleft(); # Dequeues the front element (10) from the queue."
+        "back": "queue.popleft();"
       },
       {
         "front": "How do you sort a list in Python?",
-        "back": "To sort a list, use the sort() method for in-place sorting or the sorted() function for returning a new sorted list. Example: lst = [3, 1, 4, 1, 5, 9]; lst.sort(); # Sorts the list in ascending order in place. or sorted_lst = sorted(lst); # Returns a new sorted list."
+        "back": "lst.sort();"
       },
       {
-        "front": "How do you find the minimum and maximum elements in a list in Python?",
-        "back": "To find the minimum and maximum elements in a list, use the min() and max() functions. Example: lst = [3, 1, 4, 1, 5, 9]; min_val = min(lst); # Finds the minimum element (1). max_val = max(lst); # Finds the maximum element (9)."
+        "front": "How do you find the min and max elements in a list in Python?",
+        "back": "min(lst); max(lst);"
       },
       {
         "front": "How do you calculate the sum of elements in a list in Python?",
-        "back": "To calculate the sum of elements in a list, use the sum() function. Example: lst = [1, 2, 3]; total = sum(lst); # Calculates the sum of elements (6)."
+        "back": "sum(lst);"
       }
     ]
   }
