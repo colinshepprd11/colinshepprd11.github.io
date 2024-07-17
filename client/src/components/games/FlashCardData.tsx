@@ -240,77 +240,70 @@ const FlashCardData = [
     ],
   },
   {
-    topic: "Python Coding Usage",
-    cards: [
+    "topic": "Advanced C++ Programming",
+    "cards": [
       {
-        front: "How do you append an element to a list in Python?",
-        back: "lst.append(4);",
+        "front": "Implementing RAII (Resource Acquisition Is Initialization) in C++",
+        "back": "class Resource { int* data; public: Resource() { data = new int[100]; } ~Resource() { delete[] data; } };"
       },
       {
-        front:
-          "How do you insert an element at a specific position in a list in Python?",
-        back: "lst.insert(1, 4);",
+        "front": "Creating a template function to find the maximum of two values",
+        "back": "template <typename T> T max(T a, T b) { return (a > b) ? a : b; }"
       },
       {
-        front: "How do you remove the last element from a list in Python?",
-        back: "lst.pop();",
+        "front": "Using std::unique_ptr for dynamic memory management",
+        "back": "#include <memory> auto ptr = std::make_unique<int>(42);"
       },
       {
-        front:
-          "How do you remove an element at a specific position in a list in Python?",
-        back: "lst.pop(1);",
+        "front": "Defining and using a lambda function",
+        "back": "auto lambda = [](int x, int y) { return x + y; }; lambda(3, 4);"
       },
       {
-        front: "How do you add a key-value pair to a dictionary in Python?",
-        back: "dct['apple'] = 3;",
+        "front": "Implementing a simple Singleton pattern",
+        "back": "class Singleton { public: static Singleton& getInstance() { static Singleton instance; return instance; } private: Singleton() {} };"
       },
       {
-        front:
-          "How do you remove a key-value pair from a dictionary in Python?",
-        back: "dct.pop('banana');",
+        "front": "Using std::thread to create a new thread",
+        "back": "#include <thread> std::thread t([] { /* code */ }); t.join();"
       },
       {
-        front: "How do you check if a key exists in a dictionary in Python?",
-        back: "'apple' in dct;",
+        "front": "Defining and using static member functions",
+        "back": "class MyClass { public: static void staticMethod() {} }; MyClass::staticMethod();"
       },
       {
-        front: "How do you add an element to a set in Python?",
-        back: "s.add(1);",
+        "front": "Creating an abstract base class with a pure virtual function",
+        "back": "class Abstract { public: virtual void func() = 0; }; class Derived : public Abstract { void func() override {} };"
       },
       {
-        front: "How do you remove an element from a set in Python?",
-        back: "s.remove(2);",
+        "front": "Using std::move to transfer ownership of resources",
+        "back": "#include <utility> std::vector<int> v1{1, 2, 3}; auto v2 = std::move(v1);"
       },
       {
-        front: "How do you push an element to a stack in Python?",
-        back: "stack.append(10);",
+        "front": "Implementing and using a copy constructor",
+        "back": "class MyClass { public: MyClass(const MyClass&) { /* copy */ } };"
       },
       {
-        front: "How do you pop an element from a stack in Python?",
-        back: "stack.pop();",
+        "front": "Using std::shared_ptr for shared ownership",
+        "back": "#include <memory> auto ptr1 = std::make_shared<int>(42); auto ptr2 = ptr1;"
       },
       {
-        front: "How do you enqueue an element in a queue in Python?",
-        back: "queue.append(10);",
+        "front": "Creating and using an enum class",
+        "back": "enum class Color { RED, GREEN, BLUE }; Color color = Color::RED;"
       },
       {
-        front: "How do you dequeue an element from a queue in Python?",
-        back: "queue.popleft();",
+        "front": "Implementing an operator overloaded function for addition",
+        "back": "class Complex { int real, imag; Complex operator+(const Complex& rhs) { return {real + rhs.real, imag + rhs.imag}; } };"
       },
       {
-        front: "How do you sort a list in Python?",
-        back: "lst.sort();",
+        "front": "Using std::condition_variable for thread synchronization",
+        "back": "#include <condition_variable> std::mutex mtx; std::condition_variable cv; bool ready = false; /* thread func: cv.wait(lck, []{ return ready; }); */"
       },
       {
-        front: "How do you find the min and max elements in a list in Python?",
-        back: "min(lst); max(lst);",
-      },
-      {
-        front: "How do you calculate the sum of elements in a list in Python?",
-        back: "sum(lst);",
-      },
-    ],
-  },
+        "front": "Implementing a friend function in a class",
+        "back": "class MyClass { int data; public: MyClass(int val) : data(val) {} friend void showData(MyClass&); }; void showData(MyClass &obj) { std::cout << obj.data; }"
+      }
+    ]
+  }
 ];
 
 export default FlashCardData;
