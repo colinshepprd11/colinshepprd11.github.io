@@ -135,143 +135,182 @@ const FlashCardData = [
     ],
   },
   {
-    "topic": "C++ Coding Usage",
-    "cards": [
+    topic: "C++ Programming",
+    cards: [
       {
-        "front": "How do you push an element to the end of a vector in C++?",
-        "back": "vec.push_back(1);"
+        front: "how to print to console",
+        back: "std::cout << Hello, World! << std::endl;",
+      },
+      { front: "declare a vector of integers", back: "std::vector<int> vec;" },
+      {
+        front: "add and remove elements in a vector",
+        back: "vec.push_back(1); vec.pop_back();",
       },
       {
-        "front": "How do you insert an element at a specific position in a vector in C++?",
-        "back": "vec.insert(vec.begin() + 1, 4);"
+        front: "how to declare a class",
+        back: "class MyClass { public: int attribute; void method(); };",
       },
       {
-        "front": "How do you remove the last element from a vector in C++?",
-        "back": "vec.pop_back();"
+        front: "how to define a class method",
+        back: "void MyClass::method() { }",
       },
+      { front: "read an input from console", back: "std::cin >> variable;" },
       {
-        "front": "How do you access an element in a vector with bounds checking?",
-        "back": "vec.at(1);"
+        front: "basic structure of a C++ program",
+        back: "#include <iostream> int main() { return 0; }",
       },
+      { front: "how to include a standard library", back: "#include <vector>" },
+      { front: "declare a pointer to an integer", back: "int* ptr;" },
+      { front: "allocate memory for an integer", back: "int* ptr = new int;" },
+      { front: "deallocate memory of an integer", back: "delete ptr;" },
       {
-        "front": "How do you add an element to a map in C++?",
-        "back": "map_example[\"key\"] = value;"
+        front: "handle basic exceptions",
+        back: "try { } catch (std::exception& e) { std::cerr << e.what(); }",
       },
-      {
-        "front": "How do you remove an element from a map in C++?",
-        "back": "map_example.erase(\"key\");"
-      },
-      {
-        "front": "How do you check if a key exists in a map in C++?",
-        "back": "map_example.find(\"key\") != map_example.end();"
-      },
-      {
-        "front": "How do you add an element to a set in C++?",
-        "back": "set_example.insert(1);"
-      },
-      {
-        "front": "How do you remove an element from a set in C++?",
-        "back": "set_example.erase(1);"
-      },
-      {
-        "front": "How do you push an element to a stack in C++?",
-        "back": "stack_example.push(10);"
-      },
-      {
-        "front": "How do you pop an element from a stack in C++?",
-        "back": "stack_example.pop();"
-      },
-      {
-        "front": "How do you enqueue an element in a queue in C++?",
-        "back": "queue_example.push(10);"
-      },
-      {
-        "front": "How do you dequeue an element from a queue in C++?",
-        "back": "queue_example.pop();"
-      },
-      {
-        "front": "How do you sort a vector in C++?",
-        "back": "sort(vec.begin(), vec.end());"
-      },
-      {
-        "front": "How do you find the min and max elements in a vector in C++?",
-        "back": "min_element(vec.begin(), vec.end()); max_element(vec.begin(), vec.end());"
-      },
-      {
-        "front": "How do you calculate the sum of elements in a vector in C++?",
-        "back": "accumulate(vec.begin(), vec.end(), 0);"
-      }
-    ]
+    ],
   },
   {
-    "topic": "Python Coding Usage",
-    "cards": [
+    topic: "C++ Coding Usage",
+    cards: [
       {
-        "front": "How do you append an element to a list in Python?",
-        "back": "lst.append(4);"
+        front: "How do you push an element to the end of a vector in C++?",
+        back: "vec.push_back(1);",
       },
       {
-        "front": "How do you insert an element at a specific position in a list in Python?",
-        "back": "lst.insert(1, 4);"
+        front:
+          "How do you insert an element at a specific position in a vector in C++?",
+        back: "vec.insert(vec.begin() + 1, 4);",
       },
       {
-        "front": "How do you remove the last element from a list in Python?",
-        "back": "lst.pop();"
+        front: "How do you remove the last element from a vector in C++?",
+        back: "vec.pop_back();",
       },
       {
-        "front": "How do you remove an element at a specific position in a list in Python?",
-        "back": "lst.pop(1);"
+        front: "How do you access an element in a vector with bounds checking?",
+        back: "vec.at(1);",
       },
       {
-        "front": "How do you add a key-value pair to a dictionary in Python?",
-        "back": "dct['apple'] = 3;"
+        front: "How do you add an element to a map in C++?",
+        back: 'map_example["key"] = value;',
       },
       {
-        "front": "How do you remove a key-value pair from a dictionary in Python?",
-        "back": "dct.pop('banana');"
+        front: "How do you remove an element from a map in C++?",
+        back: 'map_example.erase("key");',
       },
       {
-        "front": "How do you check if a key exists in a dictionary in Python?",
-        "back": "'apple' in dct;"
+        front: "How do you check if a key exists in a map in C++?",
+        back: 'map_example.find("key") != map_example.end();',
       },
       {
-        "front": "How do you add an element to a set in Python?",
-        "back": "s.add(1);"
+        front: "How do you add an element to a set in C++?",
+        back: "set_example.insert(1);",
       },
       {
-        "front": "How do you remove an element from a set in Python?",
-        "back": "s.remove(2);"
+        front: "How do you remove an element from a set in C++?",
+        back: "set_example.erase(1);",
       },
       {
-        "front": "How do you push an element to a stack in Python?",
-        "back": "stack.append(10);"
+        front: "How do you push an element to a stack in C++?",
+        back: "stack_example.push(10);",
       },
       {
-        "front": "How do you pop an element from a stack in Python?",
-        "back": "stack.pop();"
+        front: "How do you pop an element from a stack in C++?",
+        back: "stack_example.pop();",
       },
       {
-        "front": "How do you enqueue an element in a queue in Python?",
-        "back": "queue.append(10);"
+        front: "How do you enqueue an element in a queue in C++?",
+        back: "queue_example.push(10);",
       },
       {
-        "front": "How do you dequeue an element from a queue in Python?",
-        "back": "queue.popleft();"
+        front: "How do you dequeue an element from a queue in C++?",
+        back: "queue_example.pop();",
       },
       {
-        "front": "How do you sort a list in Python?",
-        "back": "lst.sort();"
+        front: "How do you sort a vector in C++?",
+        back: "sort(vec.begin(), vec.end());",
       },
       {
-        "front": "How do you find the min and max elements in a list in Python?",
-        "back": "min(lst); max(lst);"
+        front: "How do you find the min and max elements in a vector in C++?",
+        back: "min_element(vec.begin(), vec.end()); max_element(vec.begin(), vec.end());",
       },
       {
-        "front": "How do you calculate the sum of elements in a list in Python?",
-        "back": "sum(lst);"
-      }
-    ]
-  }
+        front: "How do you calculate the sum of elements in a vector in C++?",
+        back: "accumulate(vec.begin(), vec.end(), 0);",
+      },
+    ],
+  },
+  {
+    topic: "Python Coding Usage",
+    cards: [
+      {
+        front: "How do you append an element to a list in Python?",
+        back: "lst.append(4);",
+      },
+      {
+        front:
+          "How do you insert an element at a specific position in a list in Python?",
+        back: "lst.insert(1, 4);",
+      },
+      {
+        front: "How do you remove the last element from a list in Python?",
+        back: "lst.pop();",
+      },
+      {
+        front:
+          "How do you remove an element at a specific position in a list in Python?",
+        back: "lst.pop(1);",
+      },
+      {
+        front: "How do you add a key-value pair to a dictionary in Python?",
+        back: "dct['apple'] = 3;",
+      },
+      {
+        front:
+          "How do you remove a key-value pair from a dictionary in Python?",
+        back: "dct.pop('banana');",
+      },
+      {
+        front: "How do you check if a key exists in a dictionary in Python?",
+        back: "'apple' in dct;",
+      },
+      {
+        front: "How do you add an element to a set in Python?",
+        back: "s.add(1);",
+      },
+      {
+        front: "How do you remove an element from a set in Python?",
+        back: "s.remove(2);",
+      },
+      {
+        front: "How do you push an element to a stack in Python?",
+        back: "stack.append(10);",
+      },
+      {
+        front: "How do you pop an element from a stack in Python?",
+        back: "stack.pop();",
+      },
+      {
+        front: "How do you enqueue an element in a queue in Python?",
+        back: "queue.append(10);",
+      },
+      {
+        front: "How do you dequeue an element from a queue in Python?",
+        back: "queue.popleft();",
+      },
+      {
+        front: "How do you sort a list in Python?",
+        back: "lst.sort();",
+      },
+      {
+        front: "How do you find the min and max elements in a list in Python?",
+        back: "min(lst); max(lst);",
+      },
+      {
+        front: "How do you calculate the sum of elements in a list in Python?",
+        back: "sum(lst);",
+      },
+    ],
+  },
 ];
 
 export default FlashCardData;
