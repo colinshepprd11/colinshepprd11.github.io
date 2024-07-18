@@ -240,70 +240,120 @@ const FlashCardData = [
     ],
   },
   {
-    "topic": "Advanced C++ Programming",
-    "cards": [
+    topic: "Advanced C++ Programming",
+    cards: [
       {
-        "front": "Implementing RAII (Resource Acquisition Is Initialization) in C++",
-        "back": "class Resource { int* data; public: Resource() { data = new int[100]; } ~Resource() { delete[] data; } };"
+        front:
+          "Implementing RAII (Resource Acquisition Is Initialization) in C++",
+        back: "class Resource { int* data; public: Resource() { data = new int[100]; } ~Resource() { delete[] data; } };",
       },
       {
-        "front": "Creating a template function to find the maximum of two values",
-        "back": "template <typename T> T max(T a, T b) { return (a > b) ? a : b; }"
+        front: "Creating a template function to find the maximum of two values",
+        back: "template <typename T> T max(T a, T b) { return (a > b) ? a : b; }",
       },
       {
-        "front": "Using std::unique_ptr for dynamic memory management",
-        "back": "#include <memory> auto ptr = std::make_unique<int>(42);"
+        front: "Using std::unique_ptr for dynamic memory management",
+        back: "#include <memory> auto ptr = std::make_unique<int>(42);",
       },
       {
-        "front": "Defining and using a lambda function",
-        "back": "auto lambda = [](int x, int y) { return x + y; }; lambda(3, 4);"
+        front: "Defining and using a lambda function",
+        back: "auto lambda = [](int x, int y) { return x + y; }; lambda(3, 4);",
       },
       {
-        "front": "Implementing a simple Singleton pattern",
-        "back": "class Singleton { public: static Singleton& getInstance() { static Singleton instance; return instance; } private: Singleton() {} };"
+        front: "Implementing a simple Singleton pattern",
+        back: "class Singleton { public: static Singleton& getInstance() { static Singleton instance; return instance; } private: Singleton() {} };",
       },
       {
-        "front": "Using std::thread to create a new thread",
-        "back": "#include <thread> std::thread t([] { /* code */ }); t.join();"
+        front: "Using std::thread to create a new thread",
+        back: "#include <thread> std::thread t([] { /* code */ }); t.join();",
       },
       {
-        "front": "Defining and using static member functions",
-        "back": "class MyClass { public: static void staticMethod() {} }; MyClass::staticMethod();"
+        front: "Defining and using static member functions",
+        back: "class MyClass { public: static void staticMethod() {} }; MyClass::staticMethod();",
       },
       {
-        "front": "Creating an abstract base class with a pure virtual function",
-        "back": "class Abstract { public: virtual void func() = 0; }; class Derived : public Abstract { void func() override {} };"
+        front: "Creating an abstract base class with a pure virtual function",
+        back: "class Abstract { public: virtual void func() = 0; }; class Derived : public Abstract { void func() override {} };",
       },
       {
-        "front": "Using std::move to transfer ownership of resources",
-        "back": "#include <utility> std::vector<int> v1{1, 2, 3}; auto v2 = std::move(v1);"
+        front: "Using std::move to transfer ownership of resources",
+        back: "#include <utility> std::vector<int> v1{1, 2, 3}; auto v2 = std::move(v1);",
       },
       {
-        "front": "Implementing and using a copy constructor",
-        "back": "class MyClass { public: MyClass(const MyClass&) { /* copy */ } };"
+        front: "Implementing and using a copy constructor",
+        back: "class MyClass { public: MyClass(const MyClass&) { /* copy */ } };",
       },
       {
-        "front": "Using std::shared_ptr for shared ownership",
-        "back": "#include <memory> auto ptr1 = std::make_shared<int>(42); auto ptr2 = ptr1;"
+        front: "Using std::shared_ptr for shared ownership",
+        back: "#include <memory> auto ptr1 = std::make_shared<int>(42); auto ptr2 = ptr1;",
       },
       {
-        "front": "Creating and using an enum class",
-        "back": "enum class Color { RED, GREEN, BLUE }; Color color = Color::RED;"
+        front: "Creating and using an enum class",
+        back: "enum class Color { RED, GREEN, BLUE }; Color color = Color::RED;",
       },
       {
-        "front": "Implementing an operator overloaded function for addition",
-        "back": "class Complex { int real, imag; Complex operator+(const Complex& rhs) { return {real + rhs.real, imag + rhs.imag}; } };"
+        front: "Implementing an operator overloaded function for addition",
+        back: "class Complex { int real, imag; Complex operator+(const Complex& rhs) { return {real + rhs.real, imag + rhs.imag}; } };",
       },
       {
-        "front": "Using std::condition_variable for thread synchronization",
-        "back": "#include <condition_variable> std::mutex mtx; std::condition_variable cv; bool ready = false; /* thread func: cv.wait(lck, []{ return ready; }); */"
+        front: "Using std::condition_variable for thread synchronization",
+        back: "#include <condition_variable> std::mutex mtx; std::condition_variable cv; bool ready = false; /* thread func: cv.wait(lck, []{ return ready; }); */",
       },
       {
-        "front": "Implementing a friend function in a class",
-        "back": "class MyClass { int data; public: MyClass(int val) : data(val) {} friend void showData(MyClass&); }; void showData(MyClass &obj) { std::cout << obj.data; }"
-      }
-    ]
-  }
+        front: "Implementing a friend function in a class",
+        back: "class MyClass { int data; public: MyClass(int val) : data(val) {} friend void showData(MyClass&); }; void showData(MyClass &obj) { std::cout << obj.data; }",
+      },
+    ],
+  },
+  {
+    topic: "Efficiency Concepts and Technologies",
+    cards: [
+      {
+        front: "What is CUDA and how does it relate to GPU computing?",
+        back: "CUDA (Compute Unified Device Architecture) is NVIDIA's parallel computing platform and API model. It allows software developers to use NVIDIA GPUs for general purpose processing, enabling significant performance gains in compute-intensive applications.",
+      },
+      {
+        front: "How does OpenMP facilitate parallel processing in C++?",
+        back: "OpenMP is an API that supports multi-platform shared-memory parallel programming in C++. It uses compiler directives to parallelize loops and sections of code, allowing easy implementation of thread-based parallelism on multi-core processors.",
+      },
+      {
+        front: "Explain the use of memcached in caching strategies",
+        back: "Memcached is a high-performance, distributed memory caching system. It is used to speed up dynamic web applications by caching data and objects in RAM, reducing the need for external data source access and improving application performance.",
+      },
+      {
+        front: "What is the role of NGINX in I/O optimization?",
+        back: "NGINX is a high-performance web server that also acts as a reverse proxy and load balancer. It uses an asynchronous, event-driven architecture to handle many concurrent connections efficiently, optimizing I/O performance for web applications.",
+      },
+      {
+        front:
+          "How does Kubernetes contribute to workload distribution and load balancing?",
+        back: "Kubernetes is a container orchestration platform that automates the deployment, scaling, and management of containerized applications. It provides built-in load balancing, distributing network traffic to ensure high availability and efficient resource utilization across clusters.",
+      },
+      {
+        front:
+          "What is Intel's SpeedStep technology and how does it optimize power consumption?",
+        back: "Intel SpeedStep is a power management technology that allows processors to dynamically adjust voltage and clock speed. This results in decreased power consumption and heat production when the processor is not under heavy load, improving energy efficiency.",
+      },
+      {
+        front:
+          "How does Amazon EC2 Auto Scaling implement autoscaling principles?",
+        back: "Amazon EC2 Auto Scaling automatically adjusts the number of EC2 instances based on defined conditions. It uses CloudWatch metrics to monitor application load, scaling out by adding instances during demand spikes and scaling in by removing instances when demand decreases.",
+      },
+      {
+        front:
+          "What is the purpose of Prometheus in monitoring system efficiency?",
+        back: "Prometheus is an open-source monitoring and alerting toolkit. It collects and stores time-series data as metrics, providing a powerful query language and alerting capabilities. It's used to monitor system and application performance, helping identify efficiency issues and bottlenecks.",
+      },
+      {
+        front: "How does Redis contribute to memory caching strategies?",
+        back: "Redis is an in-memory data structure store that can be used as a database, cache, and message broker. It provides high-performance data caching with support for various data structures, helping to reduce database load and improve application response times.",
+      },
+      {
+        front: "What is the role of Ansible in infrastructure rightsizing?",
+        back: "Ansible is an open-source automation tool that can be used for configuration management and application deployment. It can help in infrastructure rightsizing by automating the process of scaling resources up or down based on predefined playbooks and conditions.",
+      },
+    ],
+  },
 ];
 
 export default FlashCardData;
