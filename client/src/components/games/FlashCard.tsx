@@ -7,7 +7,7 @@ import {
   FlashDisplayContainer,
   StyledSpinner,
 } from "../style";
-import FlashCardData, { newTopic } from "./FlashCardData";
+import FlashCardData from "./FlashCardData";
 import styled from "styled-components";
 import axios from "axios";
 import { BASE_AWS_URL } from "../Calendar";

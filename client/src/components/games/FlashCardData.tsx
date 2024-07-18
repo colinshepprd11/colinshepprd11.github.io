@@ -30,85 +30,6 @@ const FlashCardData = [
     ],
   },
   {
-    topic: "Distributed Systems",
-    cards: [
-      {
-        front: "Describe the CAP Theorem",
-        back: "The CAP Theorem posits that in a distributed data store only two out of the following three properties can be achieved simultaneously Consistency all nodes see the same data at the same time Availability every request receives a response either success or failure and Partition Tolerance the system continues to operate despite network partitioning Choosing which two to prioritize depends on system requirements and constraints",
-      },
-      {
-        front: "Explain quorum-based replication",
-        back: "Quorum-based replication is a consistency mechanism to ensure data integrity across distributed nodes By requiring a majority usually a quorum of nodes to agree before an operation is committed the system achieves a strong consistency model This technique is commonly used in systems like distributed databases and consensus algorithms such as Paxos and Raft",
-      },
-      {
-        front: "What is eventual consistency",
-        back: "Eventual consistency is a consistency model used in distributed systems where updates to a shared state are propagated to all nodes eventually This model does not guarantee immediate consistency but assures that if no new updates are made all nodes will eventually reach the same state It is often used in large-scale systems like Dynamo and Cassandra to provide high availability and partition tolerance",
-      },
-      {
-        front: "Role of consensus algorithms in distributed systems",
-        back: "Consensus algorithms ensure that multiple nodes in a distributed system agree on a single data value or state change They are crucial for maintaining consistency replication and fault tolerance Popular algorithms include Paxos Raft and Byzantine Fault Tolerance each offering different trade-offs in terms of performance and complexity",
-      },
-      {
-        front: "What are Microservices in the context of distributed systems",
-        back: "Microservices architecture involves decomposing a large application into smaller loosely coupled services each focusing on a specific business functionality These services communicate over a network typically via HTTP REST or messaging queues Microservices provide benefits like independent deployment and scalability but introduce challenges related to inter-service communication data consistency and fault tolerance",
-      },
-    ],
-  },
-  {
-    topic: "Efficiency Management",
-    cards: [
-      {
-        front:
-          "What is Value Stream Mapping (VSM) and how is it used in Efficiency Management?",
-        back: "Value Stream Mapping (VSM) is a lean-management method for analyzing and designing the flow of materials and information required to bring a product or service to customers. VSM visualizes the current state of processes and designs a future state with reduced waste and improved efficiency. It helps identify bottlenecks, inconsistencies, and non-value-adding activities, guiding targeted improvement efforts.",
-      },
-      {
-        front:
-          "Explain the Theory of Constraints (TOC) and its application in Efficiency Management.",
-        back: "The Theory of Constraints (TOC) identifies the most critical bottleneck or constraint in a process that limits overall system performance. By systematically improving and focusing on this constraint, substantial gains in efficiency can be achieved. TOC includes five focusing steps: identify the constraint, exploit the constraint, subordinate other processes to the constraint, elevate the constraint, and repeat the cycle. It aligns well with continuous improvement initiatives.",
-      },
-      {
-        front:
-          "What are some key performance indicators (KPIs) used in Efficiency Management?",
-        back: "Common KPIs in Efficiency Management include Overall Equipment Effectiveness (OEE) which measures equipment productivity based on availability, performance, and quality; Cycle Time which tracks the total time from the beginning to the end of a process; First Pass Yield (FPY) which assesses the proportion of products meeting quality standards without rework; and Throughput which measures the rate at which products are produced within a given period. Effective KPI selection and monitoring help identify areas for improvement.",
-      },
-      {
-        front:
-          "Describe the principles of Kaizen and its significance in Efficiency Management.",
-        back: "Kaizen is a Japanese term meaning 'continuous improvement.' It involves all employees, from management to the shop floor, in regular, incremental improvements to processes. Core principles of Kaizen include standardized work practices, waste elimination, enhancing flow, and leveraging teamwork. Kaizen is fundamental in fostering a culture of constant striving for better efficiency and quality within organizations. Small, frequent improvements add up to significant long-term gains.",
-      },
-      {
-        front: "How does Lean Six Sigma integrate into Efficiency Management?",
-        back: "Lean Six Sigma combines lean manufacturing principles, which focus on waste reduction and process flow, with Six Sigma methodologies that emphasize quality improvement and variation reduction. Together, they provide a comprehensive approach to efficiency management. Lean tools identify and eliminate waste, while Six Sigma techniques address and minimize defects. The integration facilitates more efficient and effective processes, achieving higher customer satisfaction and operational agility.",
-      },
-    ],
-  },
-  {
-    topic: "DevOps Practices",
-    cards: [
-      {
-        front: "Explain Continuous Integration CI",
-        back: "Continuous Integration CI is a DevOps practice where developers frequently integrate their code changes into a shared repository Multiple integrations per day verify updates through automated builds and tests CI aims to detect issues early in the development cycle enhancing code quality and facilitating smoother collaborative workflows",
-      },
-      {
-        front: "Describe Infrastructure as Code IaC",
-        back: "Infrastructure as Code IaC involves managing and provisioning computing infrastructure through machine-readable scripts rather than manual processes Tools like Terraform and CloudFormation allow teams to define infrastructure in code which can be version-controlled deployed automated and audited IaC improves consistency reduces human error and facilitates collaboration and disaster recovery",
-      },
-      {
-        front: "What is Blue-Green Deployment",
-        back: "Blue-Green Deployment is a release management strategy enhancing system reliability and minimizing downtime Two identical environments are maintained one blue and one green At any time only one environment serves production traffic Updates are deployed to the idle environment Once verified traffic is routed to the updated environment ensuring seamless deployment and easy rollback if needed",
-      },
-      {
-        front: "Explain the concept of immutable infrastructure",
-        back: "Immutable infrastructure means that once a server is deployed it is never modified Instead updates involve deploying a new server with the necessary changes Tools like Docker and Kubernetes support this approach providing benefits like easier rollback predictable server behavior and improved consistency in environments which is critical for large-scale cloud deployments",
-      },
-      {
-        front: "Role of Monitoring and Logging in DevOps",
-        back: "Monitoring and logging are critical in DevOps for maintaining system health and performance Monitoring tools like Prometheus and Grafana collect metrics and provide real-time insights while logging tools like ELK Stack Elasticsearch Logstash Kibana gather and analyze logs They facilitate proactive issue detection capacity planning and troubleshooting by providing detailed operational visibility",
-      },
-    ],
-  },
-  {
     topic: "Data Quality Metrics",
     cards: [
       {
@@ -240,72 +161,6 @@ const FlashCardData = [
     ],
   },
   {
-    topic: "Advanced C++ Programming",
-    cards: [
-      {
-        front:
-          "Implementing RAII (Resource Acquisition Is Initialization) in C++",
-        back: "class Resource { int* data; public: Resource() { data = new int[100]; } ~Resource() { delete[] data; } };",
-      },
-      {
-        front: "Creating a template function to find the maximum of two values",
-        back: "template <typename T> T max(T a, T b) { return (a > b) ? a : b; }",
-      },
-      {
-        front: "Using std::unique_ptr for dynamic memory management",
-        back: "#include <memory> auto ptr = std::make_unique<int>(42);",
-      },
-      {
-        front: "Defining and using a lambda function",
-        back: "auto lambda = [](int x, int y) { return x + y; }; lambda(3, 4);",
-      },
-      {
-        front: "Implementing a simple Singleton pattern",
-        back: "class Singleton { public: static Singleton& getInstance() { static Singleton instance; return instance; } private: Singleton() {} };",
-      },
-      {
-        front: "Using std::thread to create a new thread",
-        back: "#include <thread> std::thread t([] { /* code */ }); t.join();",
-      },
-      {
-        front: "Defining and using static member functions",
-        back: "class MyClass { public: static void staticMethod() {} }; MyClass::staticMethod();",
-      },
-      {
-        front: "Creating an abstract base class with a pure virtual function",
-        back: "class Abstract { public: virtual void func() = 0; }; class Derived : public Abstract { void func() override {} };",
-      },
-      {
-        front: "Using std::move to transfer ownership of resources",
-        back: "#include <utility> std::vector<int> v1{1, 2, 3}; auto v2 = std::move(v1);",
-      },
-      {
-        front: "Implementing and using a copy constructor",
-        back: "class MyClass { public: MyClass(const MyClass&) { /* copy */ } };",
-      },
-      {
-        front: "Using std::shared_ptr for shared ownership",
-        back: "#include <memory> auto ptr1 = std::make_shared<int>(42); auto ptr2 = ptr1;",
-      },
-      {
-        front: "Creating and using an enum class",
-        back: "enum class Color { RED, GREEN, BLUE }; Color color = Color::RED;",
-      },
-      {
-        front: "Implementing an operator overloaded function for addition",
-        back: "class Complex { int real, imag; Complex operator+(const Complex& rhs) { return {real + rhs.real, imag + rhs.imag}; } };",
-      },
-      {
-        front: "Using std::condition_variable for thread synchronization",
-        back: "#include <condition_variable> std::mutex mtx; std::condition_variable cv; bool ready = false; /* thread func: cv.wait(lck, []{ return ready; }); */",
-      },
-      {
-        front: "Implementing a friend function in a class",
-        back: "class MyClass { int data; public: MyClass(int val) : data(val) {} friend void showData(MyClass&); }; void showData(MyClass &obj) { std::cout << obj.data; }",
-      },
-    ],
-  },
-  {
     topic: "Efficiency Concepts and Technologies",
     cards: [
       {
@@ -354,32 +209,141 @@ const FlashCardData = [
       },
     ],
   },
+  {
+    topic: "System Calls and Libraries",
+    cards: [
+      {
+        front:
+          "What standard do exec, fork, popen, and system functions belong to, and on what systems are they common?",
+        back: "These functions are part of the POSIX standard and are common on UNIX-like systems such as Linux and macOS.",
+      },
+      {
+        front: "On what do exec, fork, popen, and system functions rely?",
+        back: "They rely on system calls provided by the underlying Unix kernel and C standard library implementations that comply with the POSIX standard.",
+      },
+      {
+        front: "What does the fork function do?",
+        back: "The fork function creates a new process by duplicating the calling process, and that concept does not exist in the same way on Windows.",
+      },
+      {
+        front: "What API does Windows use for process management and IPC?",
+        back: "Windows uses its own API, such as CreateProcess, for executing new processes.",
+      },
+      {
+        front: "Do exec and fork functions exist in Windows?",
+        back: "No, exec and fork functions do not exist in Windows.",
+      },
+      {
+        front: "Does Windows have an equivalent for the popen function?",
+        back: "Yes, Windows has a counterpart for the popen function called _popen.",
+      },
+      {
+        front: "Do all POSIX functions have direct equivalents in Windows?",
+        back: "No, while popen has a Windows counterpart _popen, other POSIX functions do not have direct equivalents.",
+      },
+      {
+        front: "Must libraries be available on the target platform?",
+        back: "Yes, libraries must be available on the target platform.",
+      },
+      {
+        front:
+          "Do UNIX-like systems generally come with libraries supporting POSIX functions?",
+        back: "Yes, most UNIX-like systems come with libraries supporting POSIX functions.",
+      },
+      {
+        front:
+          "Does Windows necessarily include support for POSIX functions out of the box?",
+        back: "No, Windows does not necessarily include support for POSIX functions out of the box.",
+      },
+      {
+        front:
+          "What library provides some compatibility on Windows for POSIX functions?",
+        back: "The Microsoft C runtime library (msvcrt) provides some compatibility, but complete POSIX behavior is not guaranteed.",
+      },
+      {
+        front:
+          "Do different operating systems handle processes, file systems, permissions, and environment variables the same way?",
+        back: "No, different operating systems handle processes, file systems, permissions, and environment variables differently.",
+      },
+      {
+        front:
+          "What are the path separators for UNIX-like systems and Windows?",
+        back: "Path separators are / on UNIX-like systems and  on Windows.",
+      },
+      {
+        front:
+          "Are environment variables like PATH accessed and formatted the same way across all platforms?",
+        back: "No, environment variables like PATH are accessed and formatted differently across platforms.",
+      },
+    ],
+  },
+  {
+    topic: "Operating Systems",
+    cards: [
+      {
+        front: "What is the relationship between UNIX, Linux, and macOS?",
+        back: "UNIX is a family of multitasking, multiuser computer operating systems. Linux is a UNIX-like operating system kernel, and macOS is a UNIX-certified operating system developed by Apple.",
+      },
+      {
+        front: "Is Linux derived directly from UNIX?",
+        back: "No, Linux is not directly derived from UNIX but is UNIX-like and follows UNIX principles.",
+      },
+      {
+        front: "What is the kernel in the context of an operating system?",
+        back: "The kernel is the core part of an operating system, managing hardware, running processes, and handling system calls.",
+      },
+      {
+        front:
+          "Which company develops macOS, and what is its UNIX certification?",
+        back: "Apple develops macOS, which is UNIX-certified, meaning it meets the Single UNIX Specification.",
+      },
+      {
+        front: "What is a package manager?",
+        back: "A package manager is a tool that automates the process of installing, updating, configuring, and removing software packages.",
+      },
+      {
+        front: "Name some package managers commonly used on Linux systems.",
+        back: "Common package managers on Linux include APT (Debian/Ubuntu), YUM and DNF (Fedora), and pacman (Arch Linux).",
+      },
+      {
+        front:
+          "What is Homebrew, and which operating system is it primarily used on?",
+        back: "Homebrew is a package manager primarily used on macOS to install UNIX tools and other open-source software.",
+      },
+      {
+        front:
+          "What is the purpose of environment variables in operating systems?",
+        back: "Environment variables store configuration settings and system information used by processes and the operating system.",
+      },
+      {
+        front:
+          "What is the default package manager for Debian-based Linux distributions?",
+        back: "The default package manager for Debian-based Linux distributions is APT (Advanced Package Tool).",
+      },
+      {
+        front:
+          "On which operating systems can you typically find the yum package manager?",
+        back: "The yum package manager is typically found on Fedora and other Red Hat-based Linux distributions.",
+      },
+      {
+        front: "What is a repository in the context of package managers?",
+        back: "A repository is a storage location from which software packages can be retrieved and installed via a package manager.",
+      },
+      {
+        front: "What is dpkg, and which type of packages does it manage?",
+        back: "dpkg is the package manager for Debian-based systems that directly handles .deb packages.",
+      },
+      {
+        front:
+          "How can you generally install a package using APT in the terminal?",
+        back: "You can install a package using APT with the command sudo apt-get install package_name.",
+      },
+      {
+        front: "What is rpm, and what is its primary use?",
+        back: "rpm is the Red Hat Package Manager, primarily used for managing .rpm packages on Red Hat-based systems.",
+      },
+    ],
+  },
 ];
 
 export default FlashCardData;
-
-export const newTopic = {
-  topic: "New Topic",
-  cards: [
-    {
-      front: "Explain the concept of feature engineering",
-      back: "Feature engineering is the process of using domain knowledge to extract features from raw data to improve the performance of machine learning models It includes creating new features selecting relevant features and transforming existing features This step is crucial for capturing the underlying patterns in data and significantly impacts model accuracy and efficiency",
-    },
-    {
-      front: "Define model versioning and its importance",
-      back: "Model versioning involves keeping track of different versions of machine learning models It is essential for ensuring reproducibility consistency and traceability in workflows By maintaining a systematic record of model changes and their respective performance metrics teams can easily rollback to previous versions compare models and manage deployments effectively",
-    },
-    {
-      front: "What are the challenges of distributed training",
-      back: "Distributed training involves training machine learning models across multiple machines or devices to handle large datasets and complex models Challenges include managing communication overhead ensuring model parameter synchronization dealing with hardware heterogeneity and efficiently partitioning the data to avoid bottlenecks Solutions often involve using frameworks like TensorFlow or PyTorch that provide built-in support for distributed computing",
-    },
-    {
-      front: "Role of orchestration tools in ML workflows",
-      back: "Orchestration tools like Kubeflow and Airflow automate and manage end-to-end machine learning workflows They handle various stages such as data pre-processing model training hyperparameter tuning and deployment These tools improve reproducibility scalability and collaboration by providing standardized pipelines and integration with other tools in the machine learning ecosystem",
-    },
-    {
-      front: "Importance of data provenance in ML",
-      back: "Data provenance refers to tracking the origin and transformations of data throughout its lifecycle in a machine learning project It ensures data integrity and transparency by providing a comprehensive audit trail Data provenance is critical for reproducibility debugging and regulatory compliance in ML applications enabling teams to trace results back to their data sources and transformations",
-    },
-  ],
-};
