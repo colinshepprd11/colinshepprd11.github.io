@@ -278,69 +278,173 @@ const FlashCardData = [
     ],
   },
   {
-    topic: "Operating Systems",
+    topic: "Running Python, C++, and React Applications on MAC",
     cards: [
       {
-        front: "What is the relationship between UNIX, Linux, and macOS?",
-        back: "UNIX is a family of multitasking, multiuser computer operating systems. Linux is a UNIX-like operating system kernel, and macOS is a UNIX-certified operating system developed by Apple.",
+        front: "How do you install Python packages on a MAC",
+        back: "Use the command 'pip install <package_name>' in the terminal",
       },
       {
-        front: "Is Linux derived directly from UNIX?",
-        back: "No, Linux is not directly derived from UNIX but is UNIX-like and follows UNIX principles.",
+        front: "How do you install pip on a MAC",
+        back: "Ensure Python is installed, then use 'curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py' followed by 'python get-pip.py'",
       },
       {
-        front: "What is the kernel in the context of an operating system?",
-        back: "The kernel is the core part of an operating system, managing hardware, running processes, and handling system calls.",
+        front: "What command do you use to check pip version",
+        back: "Use 'pip --version' in the terminal",
       },
       {
-        front:
-          "Which company develops macOS, and what is its UNIX certification?",
-        back: "Apple develops macOS, which is UNIX-certified, meaning it meets the Single UNIX Specification.",
+        front: "How do you set an environment variable in MAC",
+        back: "Use 'export VARIABLE_NAME=value' in the terminal or add it to your shell configuration file like .bash_profile or .zshrc",
       },
       {
-        front: "What is a package manager?",
-        back: "A package manager is a tool that automates the process of installing, updating, configuring, and removing software packages.",
+        front: "How do you view the current environment variables on a MAC",
+        back: "Use the command 'printenv' in the terminal",
       },
       {
-        front: "Name some package managers commonly used on Linux systems.",
-        back: "Common package managers on Linux include APT (Debian/Ubuntu), YUM and DNF (Fedora), and pacman (Arch Linux).",
+        front: "How do you add a directory to the PATH variable",
+        back: "Add 'export PATH=$PATH:/path/to/directory' to your shell configuration file and run 'source <file_name>' to apply changes",
       },
       {
-        front:
-          "What is Homebrew, and which operating system is it primarily used on?",
-        back: "Homebrew is a package manager primarily used on macOS to install UNIX tools and other open-source software.",
+        front: "How do you compile a C++ program on a MAC",
+        back: "Use 'g++ -o outputfile sourcefile.cpp' in the terminal",
       },
       {
-        front:
-          "What is the purpose of environment variables in operating systems?",
-        back: "Environment variables store configuration settings and system information used by processes and the operating system.",
+        front: "How do you run a compiled C++ program on a MAC",
+        back: "Use './outputfile' in the terminal",
       },
       {
-        front:
-          "What is the default package manager for Debian-based Linux distributions?",
-        back: "The default package manager for Debian-based Linux distributions is APT (Advanced Package Tool).",
+        front: "How do you install Node.js and npm on a MAC",
+        back: "Use 'brew install node' if Homebrew is installed. This installs both Node.js and npm",
       },
       {
-        front:
-          "On which operating systems can you typically find the yum package manager?",
-        back: "The yum package manager is typically found on Fedora and other Red Hat-based Linux distributions.",
+        front: "How do you check npm and Node.js versions",
+        back: "Use 'npm --version' and 'node --version' in the terminal",
       },
       {
-        front: "What is a repository in the context of package managers?",
-        back: "A repository is a storage location from which software packages can be retrieved and installed via a package manager.",
+        front: "How do you create a new React application",
+        back: "Use 'npx create-react-app my-app' in the terminal",
       },
       {
-        front: "What is dpkg, and which type of packages does it manage?",
-        back: "dpkg is the package manager for Debian-based systems that directly handles .deb packages.",
+        front: "How do you start a React application",
+        back: "Navigate to your application directory and use 'npm start' in the terminal",
       },
       {
-        front:
-          "How can you generally install a package using APT in the terminal?",
-        back: "You can install a package using APT with the command sudo apt-get install package_name.",
+        front: "What is the purpose of the .zshrc file",
+        back: ".zshrc is a configuration file for zsh, where you can set environment variables and aliases",
       },
       {
-        front: "What is rpm, and what is its primary use?",
-        back: "rpm is the Red Hat Package Manager, primarily used for managing .rpm packages on Red Hat-based systems.",
+        front: "How do you switch to the zsh shell on a MAC",
+        back: "Use the command 'chsh -s /bin/zsh' and restart the terminal",
+      },
+      {
+        front: "How do you update Homebrew packages",
+        back: "Use 'brew update' followed by 'brew upgrade' in the terminal",
+      },
+    ],
+  },
+  {
+    topic:
+      "Installing and Running Python, Docker, React, and C++ on MAC and Linux",
+    cards: [
+      {
+        front: "How do you install Python on a MAC",
+        back: "Use brew install python if Homebrew is installed or download the installer from the Python website",
+      },
+      {
+        front: "How do you install Python on Linux",
+        back: "Use sudo apt-get install python3 for Debian-based distributions or sudo yum install python3 for Red Hat-based distributions",
+      },
+      {
+        front: "How do you install pip on MAC",
+        back: "Ensure Python is installed, then use curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py followed by python get-pip.py",
+      },
+      {
+        front: "How do you install pip on Linux",
+        back: "Use sudo apt-get install python3-pip for Debian-based distributions or sudo yum install python3-pip for Red Hat-based distributions",
+      },
+      {
+        front: "How do you install Docker on a MAC",
+        back: "Download Docker Desktop from the Docker website and follow the installation instructions",
+      },
+      {
+        front: "How do you install Docker on Linux",
+        back: "Use sudo apt-get install docker-ce docker-ce-cli containerd.io for Debian-based distributions or sudo yum install docker-ce docker-ce-cli containerd.io for Red Hat-based distributions",
+      },
+      {
+        front: "How do you start the Docker service on Linux",
+        back: "Use sudo systemctl start docker in the terminal",
+      },
+      {
+        front: "How do you add your user to the Docker group on Linux",
+        back: "Use sudo usermod -aG docker $USER and then restart your terminal or log out and back in",
+      },
+      {
+        front: "How do you install Node.js and npm on a MAC",
+        back: "Use brew install node if Homebrew is installed. This installs both Node.js and npm",
+      },
+      {
+        front: "How do you install Node.js and npm on Linux",
+        back: "Use sudo apt-get install nodejs npm for Debian-based distributions or sudo yum install nodejs npm for Red Hat-based distributions",
+      },
+      {
+        front: "How do you create a new React application",
+        back: "Use npx create-react-app my-app in the terminal",
+      },
+      {
+        front: "How do you start a React application",
+        back: "Navigate to your application directory and use npm start in the terminal",
+      },
+      {
+        front: "How do you compile a C++ program on a MAC",
+        back: "Use g++ -o outputfile sourcefile.cpp in the terminal",
+      },
+      {
+        front: "How do you compile a C++ program on Linux",
+        back: "Use g++ -o outputfile sourcefile.cpp in the terminal",
+      },
+      {
+        front: "How do you run a compiled C++ program on a MAC or Linux",
+        back: "Use ./outputfile in the terminal",
+      },
+      {
+        front: "How do you set an environment variable on a MAC",
+        back: "Use export VARIABLE_NAME=value in the terminal or add it to your shell configuration file like .bash_profile or .zshrc",
+      },
+      {
+        front: "How do you set an environment variable on Linux",
+        back: "Use export VARIABLE_NAME=value in the terminal or add it to your shell configuration file like .bashrc or .zshrc",
+      },
+      {
+        front: "How do you add a directory to the PATH variable on a MAC",
+        back: "Add export PATH=$PATH:/path/to/directory to your shell configuration file and run source <file_name> to apply changes",
+      },
+      {
+        front: "How do you add a directory to the PATH variable on Linux",
+        back: "Add export PATH=$PATH:/path/to/directory to your shell configuration file and run source <file_name> to apply changes",
+      },
+      {
+        front: "How do you install Homebrew on a MAC",
+        back: "Use the command /bin/bash -c $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh) in the terminal",
+      },
+      {
+        front: "How do you update Homebrew packages on a MAC",
+        back: "Use brew update followed by brew upgrade in the terminal",
+      },
+      {
+        front: "How do you check the version of Python installed on a MAC",
+        back: "Use python3 --version in the terminal",
+      },
+      {
+        front: "How do you check the version of Python installed on Linux",
+        back: "Use python3 --version in the terminal",
+      },
+      {
+        front: "How do you check the version of Node.js and npm on a MAC",
+        back: "Use node --version and npm --version in the terminal",
+      },
+      {
+        front: "How do you check the version of Node.js and npm on Linux",
+        back: "Use node --version and npm --version in the terminal",
       },
     ],
   },
