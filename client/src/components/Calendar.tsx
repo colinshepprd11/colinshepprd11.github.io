@@ -3,7 +3,7 @@ import moment from "moment-timezone";
 import { useEffect, useState } from "react";
 import { Calendar as BigCalendar, momentLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-export const BASE_AWS_URL = "https://open.bluebirdjournal.app/public/computation";
+export const BASE_AWS_URL = "https://bluebird-journal-1dd4c438d021.herokuapp.com/public/computation";
 // export const BASE_AWS_URL = "http://localhost:3001/public/computation"
 type CalendarEvent = {
   title: string;
