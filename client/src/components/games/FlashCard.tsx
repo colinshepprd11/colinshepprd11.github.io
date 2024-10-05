@@ -42,8 +42,24 @@ const CardDisplay = ({ cards, topic }: any) => {
 const FlashCard = () => {
   const [activeTopic, setActiveTopic] = useState<any>({ topic: "", cards: [] });
   const [topicInput, setTopicInput] = useState("");
-  const [flashCards, setFlashCards] = useState<any>(FlashCardData);
+  const [flashCards, setFlashCards] = useState<any>([]);
   const [loading, setLoading] = useState(false);
+
+  const fetchData = async () => {
+    try {
+      const results = await axios.post(`${BASE_AWS_URL}/cards`);
+      if(results.data && results.data.length){
+        setFlashCards([...flashCards, ...results.data])
+      }
+    } catch (error) {
+      console.log("error fetching /data");
+      return [];
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  },[]);
 
   const handleTopicSubmit = async () => {
     try {

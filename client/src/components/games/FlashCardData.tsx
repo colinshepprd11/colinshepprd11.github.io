@@ -1,8 +1,11 @@
+// THIS IS NOT CURRENTLY USED JUST FOR DEMO
+
 // Create 5 extremely challenging flashcards with useful information on a specific topic or specific technology within software infrastructure.
 // make the back of each card very detailed but concise and explained clearly for a senior level technical person.
 // I am using the response programmatically so I need the flashcards to be in exactly this format with no additional text in the response. Do not include any numbered lists, or bullet points or special spacing:
 // {topic: "topic",cards:[{front: "front of card 1", back: "back of card 1 having no numbered lists, or bullet points or special spacing"},]}
 
+// THIS IS NOT CURRENTLY USED JUST FOR DEMO
 const FlashCardData = [
   {
     topic: "Kubernetes Advanced Concepts",

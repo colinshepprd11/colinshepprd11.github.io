@@ -11,10 +11,10 @@ const GameSection = () => {
         <Computation />
       </GameItemContainer>
       <GameItemContainer>
-        <Improv />
+        <FlashCard />
       </GameItemContainer>
       <GameItemContainer>
-        <FlashCard />
+        <Improv />
       </GameItemContainer>
     </GameContainer>
   );
